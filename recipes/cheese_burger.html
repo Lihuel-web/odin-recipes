@@ -7,22 +7,42 @@
             a {
   color: rgba(153, 244, 108, 0.937);
 }
+        * {
+            text-align: center;
+        }
+        ul, li, ol {
+            text-align: left;
+            padding: 10px /*solid blue; no funciona ponerle color ya que padding es el color del background color y margin siempre es 
+            transparente*/ 
+            margin: 1000px /*solid green;  acá tampoco funciona el color nunca es transparente siempre y se superpone al otro margen
+            de lo que tenga alrededor*/
+        }
         body {
             background-color: black;
             color: white;
+        }
+        div {
+            text-align: center;
+            background-color: rgba(127, 255, 212, 0.158);
+            border: 3px solid red; /* este sí da otro color, es el borde tal cual (entre margin y padding q es el relleno)*/
+            padding: 30px; /*sólo se ve en que se agranda el color del background alrededor del texto*/
+            margin: 70px; /*sólo se ve en el espacio entre otros objetos de alrededor, es invisible*/
+            box-sizing: border-box;/*Si en lugar de header uso div funciona mejor el centrado y fondo con border box
+            pero para SEO parece que conviene usar header con table. Cuando le pongo width se va para la izquierda y ya no queda centrado :s*/ 
         }
         </style>
     </head>
     <body>
         <h1>Cheese burger recipe 1</h1>
         <figure>
-            <img src="./recipes_images/Cheeseburger.jpg" alt="Cheese burger image">
+            <img src="./recipes_images/Cheeseburger.jpg" width="30%" height="auto" alt="Cheese burger image">
             <figcaption>Source: <a href="https://es.m.wikipedia.org/wiki/Archivo:Cheeseburger.jpg">Wikipedia's Cheese burger</a></figcaption>
         </figure>
         <h2>Description</h2>
-    Lasagna is a type of Italian dish made by layering flat pasta sheets with meat or vegetables, cheese, and a sauce, typically a meat- or tomato-based sauce.
+    <div>Lasagna is a type of Italian dish made by layering flat pasta sheets with meat or vegetables,<br>
+        cheese, and a sauce, typically a meat- or tomato-based sauce.
     The dish is then baked in the oven until the sauce is hot and bubbly and the pasta is cooked through.<br>
-    The result is a hearty and flavorful meal that is often served with a side salad or garlic bread.
+    The result is a hearty and flavorful meal that is often served with a side salad or garlic bread.</div>
     <h2>Ingredients</h2>
     <ul>
         <li>ground beef</li>
